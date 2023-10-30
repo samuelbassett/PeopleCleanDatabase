@@ -1,6 +1,6 @@
 # PeopleCleanDatabase
 Project to practice CLEAN Architecture
-Libraries:
+# Libraries:
 - Compose
 - Hilt
 - Room
