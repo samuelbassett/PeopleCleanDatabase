@@ -26,8 +26,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.tc.domain.model.local.People
-import com.tc.domain.model.local.PeopleDao
-import com.tc.domain.model.local.PeopleModel
 import com.tc.peoplecleandatabase.screens.viewmodels.PeopleListViewModel
 
 @Composable

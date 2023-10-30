@@ -1,7 +1,8 @@
 package com.tc.domain.usecase
 
-import com.tc.domain.repository.PeopleService
+
 import com.tc.domain.model.local.People
+import com.tc.domain.repository.PeopleService
 import com.tc.domain.model.local.PeopleDao
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
