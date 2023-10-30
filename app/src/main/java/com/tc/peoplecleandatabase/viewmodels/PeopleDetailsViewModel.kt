@@ -1,4 +1,4 @@
-package com.tc.peoplecleandatabase.screens.viewmodels
+package com.tc.peoplecleandatabase.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -17,7 +17,7 @@ class PeopleDetailsViewModel @Inject constructor(
     private val _selectedPerson = MutableStateFlow<People?>(null)
     val selectedPerson: StateFlow<People?> = _selectedPerson
 
-    fun fetchPersonById(personId: Long) {
+    fun fetchPersonById(personId: Int) {
         viewModelScope.launch {
             val person = peopleDao.getPersonById(personId)
             _selectedPerson.value = person

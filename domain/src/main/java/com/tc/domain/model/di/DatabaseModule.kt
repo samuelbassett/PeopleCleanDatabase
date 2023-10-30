@@ -1,4 +1,4 @@
-package com.tc.data.di
+package com.tc.domain.model.di
 
 import android.content.Context
 import androidx.room.Room
@@ -21,7 +21,7 @@ class DatabaseModule {
         return Room.databaseBuilder(
             context,
             AppDatabase::class.java,
-            "people_database"
+            "people_database.db"
         ).build()
     }
 

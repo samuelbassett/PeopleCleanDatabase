@@ -17,11 +17,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
-import com.tc.peoplecleandatabase.screens.viewmodels.PeopleDetailsViewModel
+import com.tc.peoplecleandatabase.viewmodels.PeopleDetailsViewModel
 
 @Composable
 fun PeopleDetails(
-    id: Long
+    id: Int
 ) {
     val viewModel = hiltViewModel<PeopleDetailsViewModel>()
     val peopleData by viewModel.selectedPerson.collectAsState()

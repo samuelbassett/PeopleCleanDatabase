@@ -47,7 +47,7 @@ fun AppNavigation() {
             composable("${Screens.PeopleDetails.route}/{id}") { backStackEntry ->
                 targetScreen.value = Screens.PeopleDetails
                 PeopleDetails(
-                    backStackEntry.arguments?.getString("id")!!.toLong()
+                    backStackEntry.arguments?.getString("id")!!.toInt()
                 )
             }
         }

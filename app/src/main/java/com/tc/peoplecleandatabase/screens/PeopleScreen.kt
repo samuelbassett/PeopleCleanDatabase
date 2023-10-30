@@ -26,7 +26,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.tc.domain.model.local.People
-import com.tc.peoplecleandatabase.screens.viewmodels.PeopleListViewModel
+import com.tc.peoplecleandatabase.viewmodels.PeopleListViewModel
 
 @Composable
 fun PeopleScreen(
@@ -36,7 +36,7 @@ fun PeopleScreen(
     val peopleData by viewModel.peopleData.collectAsState()
     viewModel.fetchAllPeople()
 
-    val navigateToDetails: (Long) -> Unit = { id ->
+    val navigateToDetails: (Int) -> Unit = { id ->
         navController.navigate("${Screens.PeopleDetails.route}/$id")
     }
 
@@ -52,7 +52,7 @@ fun PeopleScreen(
 }
 
 @Composable
-fun PeopleItem(people: People, navigateToDetails: (Long) -> Unit) {
+fun PeopleItem(people: People, navigateToDetails: (Int) -> Unit) {
     Card(
         elevation = CardDefaults.cardElevation(10.dp),
         shape = RoundedCornerShape(10.dp),

@@ -1,4 +1,4 @@
-package com.tc.peoplecleandatabase.screens.viewmodels
+package com.tc.peoplecleandatabase.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

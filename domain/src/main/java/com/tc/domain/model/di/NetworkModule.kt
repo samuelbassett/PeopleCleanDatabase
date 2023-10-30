@@ -1,4 +1,4 @@
-package com.tc.data.di
+package com.tc.domain.model.di
 
 import com.google.gson.Gson
 import com.tc.domain.repository.ApiDetails
