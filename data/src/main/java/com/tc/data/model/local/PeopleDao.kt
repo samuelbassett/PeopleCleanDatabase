@@ -1,4 +1,4 @@
-package com.tc.domain.model.local
+package com.tc.data.model.local
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -8,16 +8,13 @@ import androidx.room.Query
 @Dao
 interface PeopleDao {
     @Query("SELECT * FROM people")
-    fun getAllPeople(): List<People>
+    suspend fun getAllPeople(): List<PeopleEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(people: People): Long
+    suspend fun insertAll(people: List<PeopleEntity>)
 
     @Query("SELECT * FROM people WHERE id = :personId")
-    suspend fun getPersonById(personId: Int): People
-
-    @Insert
-    fun insertAll(peopleList: List<People>)
+    suspend fun getPersonById(personId: Int): PeopleEntity
 
     @Query("DELETE FROM people")
     suspend fun deleteAll()

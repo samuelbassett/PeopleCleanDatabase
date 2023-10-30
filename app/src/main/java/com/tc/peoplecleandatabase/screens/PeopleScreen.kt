@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
-import com.tc.domain.model.local.People
+import com.tc.data.model.local.PeopleEntity
 import com.tc.peoplecleandatabase.viewmodels.PeopleListViewModel
 
 @Composable
@@ -34,6 +34,7 @@ fun PeopleScreen(
 ) {
     val viewModel = hiltViewModel<PeopleListViewModel>()
     val peopleData by viewModel.peopleData.collectAsState()
+
     viewModel.fetchAllPeople()
 
     val navigateToDetails: (Int) -> Unit = { id ->
@@ -42,7 +43,7 @@ fun PeopleScreen(
 
     LazyColumn(
         modifier = Modifier
-            .padding(top = 64.dp, bottom = 56.dp)
+            .padding(top = 64.dp)
             .fillMaxSize()
     ) {
         items(peopleData) { people ->
@@ -52,7 +53,7 @@ fun PeopleScreen(
 }
 
 @Composable
-fun PeopleItem(people: People, navigateToDetails: (Int) -> Unit) {
+fun PeopleItem(people: PeopleEntity, navigateToDetails: (Int) -> Unit) {
     Card(
         elevation = CardDefaults.cardElevation(10.dp),
         shape = RoundedCornerShape(10.dp),

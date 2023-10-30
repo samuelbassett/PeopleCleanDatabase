@@ -2,8 +2,8 @@ package com.tc.domain.model.di
 
 import android.content.Context
 import androidx.room.Room
-import com.tc.domain.model.local.AppDatabase
-import com.tc.domain.model.local.PeopleDao
+import com.tc.data.model.local.AppDatabase
+import com.tc.data.model.local.PeopleDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,7 +21,7 @@ class DatabaseModule {
         return Room.databaseBuilder(
             context,
             AppDatabase::class.java,
-            "people_database.db"
+            "people_db"
         ).build()
     }
 

@@ -1,8 +1,14 @@
 package com.tc.domain.model.di
 
 import com.google.gson.Gson
-import com.tc.domain.repository.ApiDetails
-import com.tc.domain.repository.PeopleService
+import com.tc.data.model.remote.ApiDetails
+import com.tc.data.model.remote.PeopleService
+import com.tc.data.model.local.PeopleDao
+import com.tc.data.model.repository.PeopleRepository
+import com.tc.data.model.repository.PeopleRepositoryImpl
+import com.tc.data.util.CacheMapper
+import com.tc.domain.usecase.FetchAllPeopleUseCase
+import com.tc.domain.usecase.FetchAllPeopleUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -58,5 +64,23 @@ class NetworkModule {
         retrofit: Retrofit
     ): PeopleService {
         return retrofit.create(PeopleService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideRepository(
+        service: PeopleService,
+        peopleDao: PeopleDao,
+        cacheMapper: CacheMapper
+    ): PeopleRepository {
+        return PeopleRepositoryImpl(service, peopleDao, cacheMapper)
+    }
+
+    @Singleton
+    @Provides
+    fun provideUseCase(
+        peopleRepository: PeopleRepository
+    ): FetchAllPeopleUseCase {
+        return FetchAllPeopleUseCaseImpl(peopleRepository)
     }
 }

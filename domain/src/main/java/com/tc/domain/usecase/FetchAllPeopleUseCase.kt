@@ -1,8 +1,7 @@
 package com.tc.domain.usecase
 
-import com.tc.domain.model.local.People
-import kotlinx.coroutines.flow.Flow
+import com.tc.data.model.local.PeopleEntity
 
 interface FetchAllPeopleUseCase {
-    fun execute(): Flow<List<People>>
+    suspend fun execute(): List<PeopleEntity>
 }

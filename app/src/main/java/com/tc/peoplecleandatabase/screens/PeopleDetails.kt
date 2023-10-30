@@ -26,7 +26,7 @@ fun PeopleDetails(
     val viewModel = hiltViewModel<PeopleDetailsViewModel>()
     val peopleData by viewModel.selectedPerson.collectAsState()
     viewModel.fetchPersonById(id)
-    Column {
+    Column(modifier = Modifier.padding(top = 64.dp, start = 8.dp, end = 8.dp)) {
         Row {
             AsyncImage(
                 model = peopleData?.avatarImage,

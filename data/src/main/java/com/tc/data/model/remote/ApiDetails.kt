@@ -1,4 +1,4 @@
-package com.tc.domain.repository
+package com.tc.data.model.remote
 
 object ApiDetails {
     const val BASE_URL = "https://raw.githubusercontent.com/"

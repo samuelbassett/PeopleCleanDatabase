@@ -3,7 +3,7 @@ package com.tc.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class People(
+data class PeopleModel(
     @SerializedName("avatarImage")
     val avatarImage: String = "",
     @SerializedName("dateOfBirth")
